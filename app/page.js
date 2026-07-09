@@ -34,7 +34,7 @@ export default function Home() {
           Familiar with Git version control and agile methodologies. Passionate about learning new technologies and improving coding skills.
         </p>
 
-        <div className="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid w-full max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {Skills.default.map((skill) => (
             <div
               key={skill.name}
