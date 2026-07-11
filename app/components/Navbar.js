@@ -1,13 +1,16 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { LuFileCode2, LuHouse, LuCircleUser  } from "react-icons/lu";
+import { IoMdCode } from "react-icons/io";
+import { FiInfo } from "react-icons/fi";
 
 const navItems = [
-  { label: 'Home', id: "home", icon: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg> },
-  { label: 'About', id: "about", icon: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg> },
-  { label: 'Skills', id: "skills", icon: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> },
-  { label: 'Projects', id: "projects", icon: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><rect width="20" height="14" x="2" y="6" rx="2" /></svg> },
-  { label: 'Contact', id: "contact", icon: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg> },
+  { label: 'Home', id: "home", icon: (props) => < LuHouse {...props} size={16} /> },
+  { label: 'About', id: "about", icon: (props) => < FiInfo {...props} size={16} /> },
+  { label: 'Skills', id: "skills", icon: (props) => < IoMdCode {...props} size={16} /> },
+  { label: 'Projects', id: "projects", icon: (props) => < LuFileCode2 {...props} size={16} /> },
+  { label: 'Contact', id: "contact", icon: (props) => < LuCircleUser {...props} size={16} /> },
 ]
 
 function Navbar() {
@@ -62,7 +65,7 @@ function Navbar() {
               type="button"
               key={item.label}
               onClick={() => handleNavClick(item.id)}
-              className="flex items-center gap-2 rounded-full px-4 py-2 text-sm transition hover:bg-gray-300/20"
+              className="flex items-center gap-2 rounded-full px-4 py-2 text-sm transition hover:bg-gray-300/20 cursor-pointer"
             >
               {item.icon({ className: 'text-gray-300' })}
               <span>{item.label}</span>

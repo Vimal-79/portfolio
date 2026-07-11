@@ -133,7 +133,7 @@ export default function Home() {
           {projects.map((project) => (
             <div
               key={project.name}
-              className="group relative cursor-pointer flex flex-col overflow-hidden rounded-2xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-4 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
+              className="group relative cursor-default flex flex-col overflow-hidden rounded-2xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-4 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_45%)] opacity-80" />
               <div className="relative">
                 <div className="flex items-center justify-between gap-2">
@@ -148,16 +148,17 @@ export default function Home() {
                 </div>
                 <div className="flex gap-2 mt-4">
                   <p className="text-sm leading-5 font-semibold text-gray-300">GitHub:</p>
-                  <Link href={project.github} target="_blank" rel="noreferrer" className=" flex gap-5 items-baseline text-sm leading-5 underline text-gray-300/80">
-                    Click here < FaCopy onClick={(e)=>{Clipboard}} />
+                  <Link href={project.github} target="_blank" rel="noreferrer" className="text-sm leading-5 underline text-blue-300 hover:text-blue-400">
+                    Click here 
                   </Link>
+                  < FaCopy onClick={(e)=>{navigator.clipboard.writeText(project.github)}} className="cursor-pointer mx-2 hover:scale-130 transition transition-ease-in-out duration-180 text-purple-600" />
                 </div>
                 <div className="flex gap-2 mt-4">
                   <p className="text-sm leading-5 font-semibold text-gray-300">Live URL:</p>
-                  <Link href={project.liveDemo} target="_blank" rel="noreferrer" className="text-sm leading-5 underline text-blue-300">
+                  <Link href={project.liveDemo} target="_blank" rel="noreferrer" className="text-sm leading-5 underline text-blue-300 hover:text-blue-400">
                     Click here 
                   </Link>
-                  < FaCopy onClick={(e)=>{navigator.clipboard.writeText(project.liveDemo)}} className="hover:scale-130 transition transition-ease-in-out duration-180 text-purple-600" />
+                  < FaCopy onClick={(e)=>{navigator.clipboard.writeText(project.liveDemo)}} className="cursor-pointer mx-2 hover:scale-130 transition transition-ease-in-out duration-180 text-purple-600" />
                 </div>
               </div>
             </div>
