@@ -102,7 +102,7 @@ function Hero() {
                         </Link>
                     </li>
                 ))}
-            </ul>``
+            </ul>
 
             <p className="mt-6 bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-sm font-semibold uppercase tracking-[0.3em] text-transparent sm:text-base gradient-shift">
                 Scroll to explore
