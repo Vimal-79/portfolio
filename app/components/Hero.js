@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
+import RevealSection from './RevealSection';
 
 const shortLinks = [
     { name: 'GitHub', href: 'https://github.com/vimal-79', icon: <FaGithub size={34} />, hoverClass: 'hover:text-gray-400' },
@@ -45,7 +46,7 @@ function Hero() {
     }
 
     return (
-        <section id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
+        <RevealSection id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
             <h1
                 className="mt-8 text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-transparent"
                 style={{ backgroundSize: '200% 200%', animation: 'gradientShift 12s ease infinite' }}
@@ -106,7 +107,7 @@ function Hero() {
             <p className="mt-6 bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-sm font-semibold uppercase tracking-[0.3em] text-transparent sm:text-base gradient-shift">
                 Scroll to explore
             </p>
-        </section>
+        </RevealSection>
     )
 }
 

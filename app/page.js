@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "./components/Hero";
+import RevealSection from "./components/RevealSection";
 import * as Skills from "./skills/info.json";
 
 export default function Home() {
@@ -53,7 +54,7 @@ export default function Home() {
 
       {/* ============================================================= About Me ========================================================= */}
 
-      <section className="scroll-mt-24 flex flex-col items-center px-4 py-16 text-white about selection:bg-white/80 selection:text-black/80 sm:px-6 lg:px-8" id="about">
+      <RevealSection id="about" className="scroll-mt-24 flex flex-col items-center px-4 py-16 text-white about selection:bg-white/80 selection:text-black/80 sm:px-6 lg:px-8">
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
           About Me
           </h1>
@@ -68,11 +69,11 @@ export default function Home() {
             <Image src="/vimal.jpeg" alt="vimal&apos;s image" width={400} height={400} className="[-webkit-user-drag:none] [user-drag:none]" />
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* ========================================================= Skills & Technologies ========================================================= */}
 
-      <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white skills_&_Technologies selection:bg-white/80 selection:text-black/80" id="skills">
+      <RevealSection id="skills" className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white skills_&_Technologies selection:bg-white/80 selection:text-black/80">
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
           Skills & Technologies
         </h1>
@@ -121,11 +122,11 @@ export default function Home() {
             Load More Skills
           </button>
         )}
-      </section>
+      </RevealSection>
 
       {/* ==================================================================== Projects ========================================================= */}
 
-      <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white selection:bg-white/80 selection:text-black/80 projects" id="projects">
+      <RevealSection id="projects" className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white selection:bg-white/80 selection:text-black/80 projects">
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
           Projects
         </h1>
@@ -168,11 +169,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
       {/* ============================================================================== Contact Me ========================================================= */}
 
-      <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white contact selection:bg-white/80 selection:text-black/80" id="contact">
+      <RevealSection id="contact" className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white contact selection:bg-white/80 selection:text-black/80">
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift"
         >Contact Me</h1>
         <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d]" />
@@ -229,7 +230,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-      </section>
+      </RevealSection>
     </>
   );
 }
