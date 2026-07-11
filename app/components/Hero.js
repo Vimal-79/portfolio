@@ -12,7 +12,7 @@ const shortLinks = [
 
 function Hero() {
     return (
-        <section className="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
+        <section id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
             <h1 className="mt-8 text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">
                 Frontend Web Developer
             </h1>
