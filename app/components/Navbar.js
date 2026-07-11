@@ -51,7 +51,7 @@ function Navbar() {
       <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-b border-gray-300/20 px-4 pb-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <div className="h-11 w-11 overflow-hidden rounded-full">
-            <Image src="/codinglogo.jpg" alt="Logo" width={44} height={44} className="h-full w-full object-cover" />
+            <Image src="/Codinglogo.jpg" alt="Logo" width={44} height={44} className="h-full w-full object-cover" />
           </div>
           <div>
             <p className="text-lg font-bold text-white">Vimal Kumar</p>
