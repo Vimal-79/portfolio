@@ -10,6 +10,9 @@ import * as Skills from "./skills/info.json";
 export default function Home() {
   const skills = Skills.default || [];
   const [visibleCount, setVisibleCount] = useState(8);
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -26,6 +29,33 @@ export default function Home() {
 
   const visibleSkills = skills.slice(0, visibleCount);
   const hasMore = visibleCount < skills.length;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Something went wrong');
+      }
+
+      setStatus('Message sent successfully.');
+      setFormState({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus(error.message || 'Failed to send message.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const projects = [
     {
@@ -207,26 +237,28 @@ export default function Home() {
             </div>
           </div>
 
-          <form action="post" className="group relative mx-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-6 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
+          <form onSubmit={handleSubmit} className="group relative mx-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-6 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_45%)] opacity-80" />
             <div className="relative grid gap-4 md:grid-cols-2">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-200">Name</label>
-                <input type="text" id="name" name="name" className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#F68E33] focus:ring-2 focus:ring-[#F68E33]/20" placeholder="Your name" />
+                <input type="text" id="name" name="name" value={formState.name} onChange={(e) => setFormState({ ...formState, name: e.target.value })} className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#F68E33] focus:ring-2 focus:ring-[#F68E33]/20" placeholder="Your name" />
               </div>
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-200">Email</label>
-                <input type="email" id="email" name="email" className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#805bd0] focus:ring-2 focus:ring-[#805bd0]/20" placeholder="Your email" />
+                <input type="email" id="email" name="email" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#805bd0] focus:ring-2 focus:ring-[#805bd0]/20" placeholder="Your email" />
               </div>
             </div>
 
             <div className="relative mt-4">
               <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-200">Message</label>
-              <textarea id="message" name="message" rows={6} className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#F96D15] focus:ring-2 focus:ring-[#F96D15]/20" placeholder="Tell me about your project..."></textarea>
+              <textarea id="message" name="message" rows={6} value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#F96D15] focus:ring-2 focus:ring-[#F96D15]/20" placeholder="Tell me about your project..."></textarea>
             </div>
 
-            <button type="submit" className="mt-6 cursor-pointer rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(249,109,21,0.25)] gradient-shift">
-              Send Message
+            {status ? <p className="mt-4 text-sm text-cyan-300">{status}</p> : null}
+
+            <button type="submit" disabled={isSubmitting} className="mt-6 cursor-pointer rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(249,109,21,0.25)] gradient-shift disabled:cursor-not-allowed disabled:opacity-70">
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
