@@ -132,7 +132,7 @@ export default function Home() {
                   {skill.description || "Focused on building polished and reliable user experiences."}
                 </p>
                 <div className="mt-4 flex items-center justify-between text-sm text-gray-200">
-                  <span className="font-medium">Experience</span>
+                  <span className="font-medium">Progress...</span>
                 </div>
                 <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-700/80">
                   <div className="progress-fill-shimmer h-2 rounded-full bg-linear-to-r from-purple-700 via-cyan-400 to-green-500 shadow-[0_0_12px_rgba(34,211,238,0.5)] transition-[width] duration-500 ease-out"

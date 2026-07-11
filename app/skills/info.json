@@ -56,14 +56,6 @@
     "description": "Building backend services, REST APIs, and authentication systems."
   },
   {
-    "name": "Express.js",
-    "progress": 6,
-    "image": "/svg/express.svg",
-    "background": "/images/express.png",
-    "level": "Intermediate",
-    "description": "Developing RESTful APIs and backend applications with Express.js."
-  },
-  {
     "name": "MongoDB",
     "progress": 6,
     "image": "/svg/mongodb.svg",
