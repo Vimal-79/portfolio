@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaInstagram, FaLinkedinIn, FaGithub   } from "react-icons/fa";
+import { useState } from 'react'
+import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 
 const shortLinks = [
@@ -11,13 +12,56 @@ const shortLinks = [
 ];
 
 function Hero() {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleNavClick = (id) => {
+        const target = document.getElementById(id)
+        const startY = window.scrollY
+        const endY = id === 'home'
+            ? target
+                ? target.getBoundingClientRect().top + window.scrollY
+                : startY
+            : target
+                ? target.getBoundingClientRect().top + window.scrollY - 96
+                : startY
+        const duration = 800
+        const startTime = performance.now()
+
+        const animateScroll = (timestamp) => {
+            const progress = Math.min((timestamp - startTime) / duration, 1)
+            const eased = 0.5 - Math.cos(progress * Math.PI) / 2
+            const currentY = startY + (endY - startY) * eased
+
+            window.scrollTo(0, currentY)
+
+            if (progress < 1) {
+                window.requestAnimationFrame(animateScroll)
+            }
+        }
+
+        window.requestAnimationFrame(animateScroll)
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+        setIsOpen(false)
+    }
+
     return (
         <section id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
-            <h1 className="mt-8 text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">
+            <h1
+                className="mt-8 text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-transparent"
+                style={{ backgroundSize: '200% 200%', animation: 'gradientShift 12s ease infinite' }}
+            >
+                <style jsx global>{`
+                @keyframes gradientShift {
+                    0%, 100% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                }
+            `}</style>
                 Frontend Web Developer
             </h1>
 
-            <div className="mt-6 h-1 w-32 rounded-full border-4 border-white sm:w-40" />
+            <div className="mt-6 h-3 w-32 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] shadow-[0_0_20px_rgba(150,36,207,0.35)] sm:w-40 gradient-shift"/>
+
+
 
             <p className="mt-6 max-w-3xl text-center text-base leading-7 sm:text-lg md:text-xl lg:text-2xl">
                 I create interactive and responsive web applications using modern technologies.
@@ -27,7 +71,9 @@ function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center *:cursor-pointer">
-                <button className="rounded-full bg-linear-to-r from-blue-500 to-green-500 px-6 py-3 text-sm font-bold text-white transition hover:scale-105 sm:px-8 sm:py-4 sm:text-lg">
+                <button
+                    onClick={() => handleNavClick("projects")}
+                    className="rounded-full bg-linear-to-r from-blue-500 to-green-500 px-6 py-3 text-sm font-bold text-white transition hover:scale-105 sm:px-8 sm:py-4 sm:text-lg gradient-shift">
                     Know My Work
                 </button>
                 <button className="flex items-center justify-center gap-2 rounded-full border border-white/30 bg-gray-300/30 px-6 py-3 text-sm font-bold text-white transition hover:scale-105 sm:px-8 sm:py-4 sm:text-lg">
@@ -55,9 +101,9 @@ function Hero() {
                         </Link>
                     </li>
                 ))}
-            </ul>
+            </ul>``
 
-            <p className="mt-6 bg-linear-to-r from-yellow-400 to-purple-400 bg-clip-text text-sm font-semibold uppercase tracking-[0.3em] text-transparent sm:text-base">
+            <p className="mt-6 bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-sm font-semibold uppercase tracking-[0.3em] text-transparent sm:text-base gradient-shift">
                 Scroll to explore
             </p>
         </section>

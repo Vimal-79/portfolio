@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaCopy } from "react-icons/fa6";
 import Hero from "./components/Hero";
 import * as Skills from "./skills/info.json";
 
@@ -31,7 +30,7 @@ export default function Home() {
     {
       name: "Mini bank",
       description: "A banking application that allows users to manage their accounts, transfer funds, and view transaction history.",
-      technologies: ["HTML", "CSS", "JavaScript", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "JWT", "bycript"],
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "JWT", "hashing", "RESTful APIs"],
       image: "/projects/chulbul-bank.png",
       background: "/projects/chulbul-bank-background.png",
       github: "https://github.com/vimal-79/Mini-Bank",
@@ -40,7 +39,7 @@ export default function Home() {
     {
       name: "bit-link",
       description: "A URL shortening service that allows users to create their own custom short links for long URLs, track click statistics, and manage their links.",
-      technologies: ["React", "Next.js", "Node.js", "Express.js", "MongoDB"],
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB"],
       image: "/projects/bit-link.png",
       background: "/projects/bit-link-background.webp",
       github: "https://github.com/Vimal-79/BitLink",
@@ -55,9 +54,10 @@ export default function Home() {
       {/* ============================================================= About Me ========================================================= */}
 
       <section className="scroll-mt-24 flex flex-col items-center px-4 py-16 text-white about selection:bg-white/80 selection:text-black/80 sm:px-6 lg:px-8" id="about">
-        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">About Me</h1>
-        <div className="mt-8 mb-6 h-1 w-40 rounded-full bg-white" />
-
+        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
+          About Me
+          </h1>
+        <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift"/>
         <div className="my-10 flex w-full max-w-6xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="flex w-full flex-col justify-center gap-6 text-center text-gray-300/80 *:font-medium lg:w-[55%] lg:pr-8 lg:text-left">
             <p className="text-base md:text-[1.05rem]">I&apos;m a passionate developer focused on building clean, efficient, and user-friendly digital experiences. What started as curiosity has grown into a strong interest in solving real-world problems through technology.</p>
@@ -73,8 +73,10 @@ export default function Home() {
       {/* ========================================================= Skills & Technologies ========================================================= */}
 
       <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white skills_&_Technologies selection:bg-white/80 selection:text-black/80" id="skills">
-        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">Skills & Technologies</h1>
-        <div className="mt-8 mb-6 h-1 w-40 rounded-full bg-white" />
+        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
+          Skills & Technologies
+        </h1>
+        <div className="mt-8 mb-6 h-1.5 w-60 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift"/>
         <p className="mb-10 max-w-3xl text-center text-gray-300/80">
           The technologies and tools I use to build fast, scalable, and user-focused web applications. Passionate about learning new technologies and improving coding skills.
         </p>
@@ -124,8 +126,10 @@ export default function Home() {
       {/* ==================================================================== Projects ========================================================= */}
 
       <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white selection:bg-white/80 selection:text-black/80 projects" id="projects">
-        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">Projects</h1>
-        <div className="mt-8 mb-6 h-1 w-40 rounded-full bg-white" />
+        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
+          Projects
+        </h1>
+        <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d]" />
         <p className="mb-10 max-w-3xl text-center text-gray-300/80">
           A selection of projects that showcase my skills, problem-solving approach, and passion for building modern web applications.
         </p>
@@ -134,11 +138,13 @@ export default function Home() {
             <div
               key={project.name}
               className="group relative cursor-default flex flex-col overflow-hidden rounded-2xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-4 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
+
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_45%)] opacity-80" />
               <div className="relative">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-2xl font-bold tracking-wide text-white">{project.name}</h3>
                 </div>
+                <div className="mt-2 mb-4 h-1 w-40 rounded-full bg-linear-to-r from-[#5465bb] via-[#b25edd] to-[#e962a3] gradient-shift" />
                 <p className="mt-2 text-sm leading-5 text-gray-300/80">
                   {project.description}
                 </p>
@@ -149,35 +155,27 @@ export default function Home() {
                 <div className="flex gap-2 mt-4">
                   <p className="text-sm leading-5 font-semibold text-gray-300">GitHub:</p>
                   <Link href={project.github} target="_blank" rel="noreferrer" className="text-sm leading-5 underline text-blue-300 hover:text-blue-400">
-                    Click here 
+                    {project.github}
                   </Link>
-                  < FaCopy onClick={(e)=>{navigator.clipboard.writeText(project.github)}} className="cursor-pointer mx-2 hover:scale-130 transition transition-ease-in-out duration-180 text-purple-600" />
                 </div>
                 <div className="flex gap-2 mt-4">
                   <p className="text-sm leading-5 font-semibold text-gray-300">Live URL:</p>
                   <Link href={project.liveDemo} target="_blank" rel="noreferrer" className="text-sm leading-5 underline text-blue-300 hover:text-blue-400">
-                    Click here 
+                    {project.liveDemo}
                   </Link>
-                  < FaCopy onClick={(e)=>{navigator.clipboard.writeText(project.liveDemo)}} className="cursor-pointer mx-2 hover:scale-130 transition transition-ease-in-out duration-180 text-purple-600" />
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* <p>Here are some of the projects I've worked on:</p>
-        <ul>
-          <li><strong>Project 1:</strong> A web application for task management built with React and Node.js.</li>
-          <li><strong>Project 2:</strong> A personal portfolio website created using Next.js and Tailwind CSS.</li>
-          <li><strong>Project 3:</strong> A simple blog application built with React and Firebase .</li>
-        </ul> */}
       </section>
 
-
+      {/* ============================================================================== Contact Me ========================================================= */}
 
       <section className="scroll-mt-24 flex flex-col items-center px-6 py-16 text-white contact selection:bg-white/80 selection:text-black/80" id="contact">
-        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-to-r from-[#F96D15] from-25% via-[#F68E33] via-40% to-[#805bd0] bg-clip-text text-transparent">Contact Me</h1>
-        <div className="mt-8 mb-6 h-1 w-40 rounded-full bg-white" />
+        <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift"
+        >Contact Me</h1>
+        <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d]" />
         <p className="mb-10 max-w-3xl text-center text-gray-300/80">
           Have a project in mind or want to collaborate? I&apos;d love to hear from you and discuss ideas.
         </p>
@@ -226,7 +224,7 @@ export default function Home() {
               <textarea id="message" name="message" rows={6} className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-[#F96D15] focus:ring-2 focus:ring-[#F96D15]/20" placeholder="Tell me about your project..."></textarea>
             </div>
 
-            <button type="submit" className="mt-6 cursor-pointer rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(249,109,21,0.25)]">
+            <button type="submit" className="mt-6 cursor-pointer rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(249,109,21,0.25)] gradient-shift">
               Send Message
             </button>
           </form>

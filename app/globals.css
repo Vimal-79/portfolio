@@ -7,16 +7,19 @@
   0% {
     transform: translateX(-120%);
   }
+
   100% {
     transform: translateX(220%);
   }
 }
 
 @keyframes sparklePulse {
+
   0%,
   100% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 0.9;
   }
@@ -42,4 +45,22 @@
   inset: 0;
   background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 45%);
   animation: sparklePulse 1.4s ease-in-out infinite;
+}
+
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 9s ease infinite;
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
