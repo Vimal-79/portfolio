@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Mini bank",
+      "description": "A banking application that allows users to manage their accounts, transfer funds, and view transaction history.",
+      "technologies": ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "JWT", "hashing", "RESTful APIs"],
+      "image": "/projects/chulbul-bank.png",
+      "background": "/projects/chulbul-bank-background.png",
+      "github": "https://github.com/vimal-79/Mini-Bank",
+      "liveDemo": "https://chulbul-bank.netlify.app"
+    },
+    {
+      "name": "bit-link",
+      "description": "A URL shortening service that allows users to create their own custom short links for long URLs, track click statistics, and manage their links.",
+      "technologies": ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB"],
+      "image": "/projects/bit-link.png",
+      "background": "/projects/bit-link-background.webp",
+      "github": "https://github.com/Vimal-79/BitLink",
+      "liveDemo": "https://bit-link.netlify.app"
+    }
+]

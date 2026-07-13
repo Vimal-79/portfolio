@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html lang="en">
       <body className="">
 
         <div className="min-h-screen w-full relative background-patten-and-color-outer">

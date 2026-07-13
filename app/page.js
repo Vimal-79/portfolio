@@ -6,10 +6,12 @@ import Link from "next/link";
 import { TiTick } from "react-icons/ti";
 import Hero from "./components/Hero";
 import RevealSection from "./components/RevealSection";
-import * as Skills from "./skills/info.json";
+import * as Skills from "./data/info.json";
+import * as Projects from "./data/projects.json";
 
 export default function Home() {
   const skills = Skills.default || [];
+  const projects = Projects.default || [];
   const [visibleCount, setVisibleCount] = useState(8);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
@@ -28,8 +30,16 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
-  const visibleSkills = skills.slice(0, visibleCount);
-  const hasMore = visibleCount < skills.length;
+  const skillGroups = [
+    { title: "Frontend", skills: skills.filter((skill) => skill.category === "Frontend") },
+    { title: "Backend", skills: skills.filter((skill) => skill.category === "Backend") },
+    { title: "Tools", skills: skills.filter((skill) => skill.category === "Tools") },
+  ];
+  const visibleSkillGroups = skillGroups.map((group) => ({
+    ...group,
+    visibleSkills: group.skills.slice(0, visibleCount),
+  }));
+  const hasMore = visibleCount < Math.max(...skillGroups.map((group) => group.skills.length));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,27 +67,6 @@ export default function Home() {
       setIsSubmitting(false);
     }
   };
-
-  const projects = [
-    {
-      name: "Mini bank",
-      description: "A banking application that allows users to manage their accounts, transfer funds, and view transaction history.",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "JWT", "hashing", "RESTful APIs"],
-      image: "/projects/chulbul-bank.png",
-      background: "/projects/chulbul-bank-background.png",
-      github: "https://github.com/vimal-79/Mini-Bank",
-      liveDemo: "https://chulbul-bank.netlify.app"
-    },
-    {
-      name: "bit-link",
-      description: "A URL shortening service that allows users to create their own custom short links for long URLs, track click statistics, and manage their links.",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB"],
-      image: "/projects/bit-link.png",
-      background: "/projects/bit-link-background.webp",
-      github: "https://github.com/Vimal-79/BitLink",
-      liveDemo: "https://bit-link.netlify.app"
-    },
-  ]
 
   return (
     <>
@@ -113,8 +102,15 @@ export default function Home() {
           The technologies and tools I use to build fast, scalable, and user-focused web applications. Passionate about learning new technologies and improving coding skills.
         </p>
 
-        <div className="grid w-full max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {visibleSkills.map((skill) => (
+        <div className="flex w-full max-w-6xl flex-col gap-8">
+          {visibleSkillGroups.map((group) =>(
+            <div key={group.title} className="w-full">
+              <div className="mb-4 flex items-center gap-3">
+                <h2 className="text-2xl font-semibold text-white">{group.title}</h2>
+                <div className="h-px flex-1 bg-cyan-400/20" />
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {group.visibleSkills.map((skill) => (
             <div
               key={skill.name}
               className="group relative cursor-pointer flex flex-col overflow-hidden rounded-2xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-4 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
@@ -146,6 +142,9 @@ export default function Home() {
                 {/* <p className="mt-2 text-sm leading-5 text-gray-300/80">
                   {skill.description || "Focused on building polished and reliable user experiences."}
                 </p> */}
+              </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

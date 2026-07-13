@@ -3,6 +3,7 @@
     "name": "HTML",
     "image": "/svg/html.svg",
     "background": "/images/html.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "Semantic HTML",
@@ -14,6 +15,7 @@
     "name": "CSS",
     "image": "/svg/css.svg",
     "background": "/images/css.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "Responsive Design",
@@ -25,6 +27,7 @@
     "name": "JavaScript",
     "image": "/svg/javascript.svg",
     "background": "/images/javascript.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "ES6+ Features",
@@ -36,6 +39,7 @@
     "name": "React",
     "image": "/svg/react.svg",
     "background": "/images/react.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "Component Architecture",
@@ -47,6 +51,7 @@
     "name": "Next.js",
     "image": "/svg/nextjs.svg",
     "background": "/images/nextjs.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "App Router",
@@ -58,6 +63,7 @@
     "name": "Tailwind CSS",
     "image": "/svg/tailwind.svg",
     "background": "/images/tailwind.png",
+    "category": "Frontend",
     "level": "Proficient",
     "highlights": [
       "Utility-First CSS",
@@ -69,6 +75,7 @@
     "name": "Node.js",
     "image": "/svg/nodejs.svg",
     "background": "/images/nodejs.png",
+    "category": "Backend",
     "level": "Working",
     "highlights": [
       "REST APIs",
@@ -80,6 +87,7 @@
     "name": "Express.js",
     "image": "/svg/Express.svg",
     "background": "/images/Express.png",
+    "category": "Backend",
     "level": "Working",
     "highlights": [
       "REST Endpoints",
@@ -91,6 +99,7 @@
     "name": "MongoDB",
     "image": "/svg/mongodb.svg",
     "background": "/images/mongodb.png",
+    "category": "Backend",
     "level": "Working",
     "highlights": [
       "CRUD Operations",
@@ -102,6 +111,7 @@
     "name": "MySQL",
     "image": "/svg/mysql.svg",
     "background": "/images/mysql.png",
+    "category": "Backend",
     "level": "Foundational",
     "highlights": [
       "SQL Queries",
@@ -113,6 +123,7 @@
     "name": "Git",
     "image": "/svg/git.svg",
     "background": "/images/git.png",
+    "category": "Tools",
     "level": "Working",
     "highlights": [
       "Version Control",
@@ -124,6 +135,7 @@
     "name": "GitHub",
     "image": "/svg/github.svg",
     "background": "/images/github.png",
+    "category": "Tools",
     "level": "Working",
     "highlights": [
       "Repository Management",
@@ -135,6 +147,7 @@
     "name": "Firebase",
     "image": "/svg/firebase.svg",
     "background": "/images/firebase.png",
+    "category": "Backend",
     "level": "Learning",
     "highlights": [
       "Authentication",
@@ -146,6 +159,7 @@
     "name": "Docker",
     "image": "/svg/docker.svg",
     "background": "/images/docker.png",
+    "category": "Tools",
     "level": "Learning",
     "highlights": [
       "Containerization",
@@ -157,6 +171,7 @@
     "name": "Postman",
     "image": "/svg/postman.svg",
     "background": "/images/postman.png",
+    "category": "Tools",
     "level": "Working",
     "highlights": [
       "API Testing",
@@ -168,6 +183,7 @@
     "name": "Figma",
     "image": "/svg/figma.svg",
     "background": "/images/figma.png",
+    "category": "Tools",
     "level": "Learning",
     "highlights": [
       "UI Design",
@@ -179,6 +195,7 @@
     "name": "Netlify",
     "image": "/svg/netlify.svg",
     "background": "/images/netlify.png",
+    "category": "Tools",
     "level": "Working",
     "highlights": [
       "Web Deployment",
@@ -190,6 +207,7 @@
     "name": "Vercel",
     "image": "/svg/vercel.svg",
     "background": "/images/vercel.png",
+    "category": "Tools",
     "level": "Working",
     "highlights": [
       "Next.js Hosting",

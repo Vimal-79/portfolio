@@ -13,7 +13,7 @@ function Footer() {
           </li>
         </ul>
 
-        <div className="h-px w-24 rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] sm:hidden" />
+        <div className="h-px w-24 rounded-full bg-linear-to-r from-[#F96D15] via-[#F68E33] to-[#805bd0] gradient-shift sm:hidden" />
       </div>
     </footer>
   )

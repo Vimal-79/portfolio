@@ -46,7 +46,7 @@ function Hero() {
     }
 
     return (
-        <RevealSection id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
+        <RevealSection id="home" className="scroll-mt-0 mx-auto flex min-h-[calc(100vh-80px)] max-h-screen w-full max-w-6xl flex-col items-center justify-center px-4 py-16 text-white selection:bg-transparent sm:px-6 lg:px-8">
             <h1
                 className="mt-8 text-center text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-linear-[to_right,#F68E33_0%,#805bd0_25%,#eab308_50%,#22c55e_75%,#3b82f6_100%] bg-clip-text text-transparent"
                 style={{ backgroundSize: '200% 200%', animation: 'gradientShift 12s ease infinite' }}
@@ -85,7 +85,9 @@ function Hero() {
                         <path d="M24,5.5H12.5c-1.7,0-3,1.3-3,3v31c0,1.7,1.3,3,3,3h3.9" />
                         <line x1="38.5" x2="29.5" y1="14.5" y2="5.5" />
                     </svg>
-                    <span>Download CV</span>
+                    <a href="/cv.pdf" download>
+                        Download CV
+                    </a>
                 </button>
             </div>
 
