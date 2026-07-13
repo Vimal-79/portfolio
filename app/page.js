@@ -123,9 +123,7 @@ export default function Home() {
                 <div className={"h-3 w-3 rounded-full " + (skill.level === "Proficient" ? "bg-green-400" : skill.level === "Working" ? "bg-sky-400" : skill.level === "Foundational" ? "bg-amber-600": skill.level === "Learning" ? "bg-violet-500" : "")} />{skill.level}
               </div>
               <div className="relative select-none mb-3 flex h-14 w-14 items-center justify-center rounded-xl ">
-
                 <Image src={skill.image} alt={skill.name} width={48} height={48} className="object-contain" />
-
               </div>
               <div className="relative">
                 <h3 className="text-lg font-semibold tracking-wide text-white">{skill.name}</h3>
