@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { TiTick } from "react-icons/ti";
 import Hero from "./components/Hero";
 import RevealSection from "./components/RevealSection";
 import * as Skills from "./skills/info.json";
@@ -87,8 +88,8 @@ export default function Home() {
       <RevealSection id="about" className="scroll-mt-24 flex flex-col items-center px-4 py-16 text-white about selection:bg-white/80 selection:text-black/80 sm:px-6 lg:px-8">
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
           About Me
-          </h1>
-        <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift"/>
+        </h1>
+        <div className="mt-8 mb-6 h-1.5 w-40 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift" />
         <div className="my-10 flex w-full max-w-6xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="flex w-full flex-col justify-center gap-6 text-center text-gray-300/80 *:font-medium lg:w-[55%] lg:pr-8 lg:text-left">
             <p className="text-base md:text-[1.05rem]">I&apos;m a passionate developer focused on building clean, efficient, and user-friendly digital experiences. What started as curiosity has grown into a strong interest in solving real-world problems through technology.</p>
@@ -107,7 +108,7 @@ export default function Home() {
         <h1 className="text-center text-4xl font-bold md:text-6xl bg-linear-[to_right,#da7130_0%,#a2629b_25%,#4b9ee7_50%,#6671dc_75%,#805bd0_100%] bg-clip-text text-transparent gradient-shift">
           Skills & Technologies
         </h1>
-        <div className="mt-8 mb-6 h-1.5 w-60 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift"/>
+        <div className="mt-8 mb-6 h-1.5 w-60 rounded-full bg-linear-to-r from-[#1838d5] via-[#9624cf] to-[#c61a6d] gradient-shift" />
         <p className="mb-10 max-w-3xl text-center text-gray-300/80">
           The technologies and tools I use to build fast, scalable, and user-focused web applications. Passionate about learning new technologies and improving coding skills.
         </p>
@@ -118,27 +119,35 @@ export default function Home() {
               key={skill.name}
               className="group relative cursor-pointer flex flex-col overflow-hidden rounded-2xl border border-cyan-400/20 bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 p-4 shadow-[0_0_30px_rgba(34,211,238,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_36px_rgba(34,211,238,0.2)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_45%)] opacity-80" />
-              <div className="relative select-none mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-gray-200/40 to-gray-50/90 shadow-lg shadow-cyan-500/20">
+              <div className="absolute left-[calc(100%-1rem)] transform -translate-x-full rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-200">
+                {skill.level}
+              </div>
+              <div className="relative select-none mb-3 flex h-14 w-14 items-center justify-center rounded-xl ">
+
                 <Image src={skill.image} alt={skill.name} width={48} height={48} className="object-contain" />
+
               </div>
               <div className="relative">
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-lg font-semibold tracking-wide text-white">{skill.name}</h3>
-                  <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-200">
-                    {skill.level}
-                  </span>
+                <h3 className="text-lg font-semibold tracking-wide text-white">{skill.name}</h3>
+                <div>
+                  <ul className="mt-2 flex flex-col gap-1 text-sm leading-5 text-gray-300/80">
+                    <li className="flex items-start gap-2">
+                      <TiTick className="mt-0.5 shrink-0 text-lg text-green-500" />
+                      <span>{skill.highlights[0]}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <TiTick className="mt-0.5 shrink-0 text-lg text-green-500" />
+                      <span>{skill.highlights[1]}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <TiTick className="mt-0.5 shrink-0 text-lg text-green-500" />
+                      <span>{skill.highlights[2]}</span>
+                    </li>
+                  </ul>
                 </div>
-                <p className="mt-2 text-sm leading-5 text-gray-300/80">
+                {/* <p className="mt-2 text-sm leading-5 text-gray-300/80">
                   {skill.description || "Focused on building polished and reliable user experiences."}
-                </p>
-                <div className="mt-4 flex items-center justify-between text-sm text-gray-200">
-                  <span className="font-medium">Progress...</span>
-                </div>
-                <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-700/80">
-                  <div className="progress-fill-shimmer h-2 rounded-full bg-linear-to-r from-purple-700 via-cyan-400 to-green-500 shadow-[0_0_12px_rgba(34,211,238,0.5)] transition-[width] duration-500 ease-out"
-                    style={{ width: `${((Number(skill.progress) / 10) * 100).toFixed(0)}%` }}
-                  />
-                </div>
+                </p> */}
               </div>
             </div>
           ))}
@@ -261,6 +270,7 @@ export default function Home() {
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
+
         </div>
       </RevealSection>
     </>

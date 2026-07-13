@@ -1,162 +1,189 @@
 [
   {
     "name": "HTML",
-    "progress": 8,
     "image": "/svg/html.svg",
     "background": "/images/html.png",
-    "level": "Intermediate",
-    "description": "Creating semantic, accessible, and well-structured HTML5 layouts."
+    "level": "Proficient",
+    "highlights": [
+      "Semantic HTML",
+      "Accessibility",
+      "Responsive Structure"
+    ]
   },
   {
     "name": "CSS",
-    "progress": 8,
     "image": "/svg/css.svg",
     "background": "/images/css.png",
-    "level": "Intermediate",
-    "description": "Building responsive layouts using Flexbox, Grid, animations, and modern CSS."
+    "level": "Proficient",
+    "highlights": [
+      "Responsive Design",
+      "Flexbox & Grid",
+      "Animations"
+    ]
   },
   {
     "name": "JavaScript",
-    "progress": 7,
     "image": "/svg/javascript.svg",
     "background": "/images/javascript.png",
-    "level": "Intermediate",
-    "description": "Developing interactive web applications with modern JavaScript and asynchronous programming."
+    "level": "Proficient",
+    "highlights": [
+      "ES6+ Features",
+      "DOM Manipulation",
+      "Async Programming"
+    ]
   },
   {
     "name": "React",
-    "progress": 7,
     "image": "/svg/react.svg",
     "background": "/images/react.png",
-    "level": "Intermediate",
-    "description": "Building reusable components and responsive single-page applications."
+    "level": "Proficient",
+    "highlights": [
+      "Component Architecture",
+      "Component Composition",
+      "Hooks & Effects"
+    ]
   },
   {
     "name": "Next.js",
-    "progress": 7,
     "image": "/svg/nextjs.svg",
     "background": "/images/nextjs.png",
-    "level": "Intermediate",
-    "description": "Creating full-stack applications using the App Router, API routes, and server rendering."
+    "level": "Proficient",
+    "highlights": [
+      "App Router",
+      "Server Components",
+      "API Routes"
+    ]
   },
   {
     "name": "Tailwind CSS",
-    "progress": 8,
     "image": "/svg/tailwind.svg",
     "background": "/images/tailwind.png",
-    "level": "Intermediate",
-    "description": "Designing responsive and modern interfaces with utility-first CSS."
+    "level": "Proficient",
+    "highlights": [
+      "Utility-First CSS",
+      "Responsive Styling",
+      "Custom Themes"
+    ]
   },
   {
     "name": "Node.js",
-    "progress": 6,
     "image": "/svg/nodejs.svg",
     "background": "/images/nodejs.png",
-    "level": "Intermediate",
-    "description": "Building backend services, REST APIs, and authentication systems."
+    "level": "Working",
+    "highlights": [
+      "REST APIs",
+      "Middleware",
+      "Authentication"
+    ]
   },
   {
     "name": "MongoDB",
-    "progress": 6,
     "image": "/svg/mongodb.svg",
     "background": "/images/mongodb.png",
-    "level": "Intermediate",
-    "description": "Working with collections, CRUD operations, aggregation, and schema design."
-  },
-  {
-    "name": "PostgreSQL",
-    "progress": 5,
-    "image": "/svg/postgresql.svg",
-    "background": "/images/postgresql.png",
-    "level": "Beginner",
-    "description": "Using PostgreSQL for relational databases, queries, and application integration."
+    "level": "Working",
+    "highlights": [
+      "CRUD Operations",
+      "Aggregation Basics",
+      "Schema Design"
+    ]
   },
   {
     "name": "MySQL",
-    "progress": 5,
     "image": "/svg/mysql.svg",
     "background": "/images/mysql.png",
-    "level": "Beginner",
-    "description": "Writing SQL queries and designing simple relational databases."
-  },
-  {
-    "name": "Prisma ORM",
-    "progress": 5,
-    "image": "/svg/prisma.svg",
-    "background": "/images/prisma.png",
-    "level": "Beginner",
-    "description": "Managing database schemas, migrations, and ORM-based queries."
-  },
-  {
-    "name": "Firebase",
-    "progress": 5,
-    "image": "/svg/firebase.svg",
-    "background": "/images/firebase.png",
-    "level": "Beginner",
-    "description": "Using Firebase Authentication and Firestore for web applications."
+    "level": "Foundational",
+    "highlights": [
+      "SQL Queries",
+      "Joins",
+      "Normalization"
+    ]
   },
   {
     "name": "Git",
-    "progress": 6,
     "image": "/svg/git.svg",
     "background": "/images/git.png",
-    "level": "Intermediate",
-    "description": "Managing source code with commits, branches, and version control workflows."
+    "level": "Working",
+    "highlights": [
+      "Version Control",
+      "Branch Management",
+      "Team Collaboration"
+    ]
   },
   {
     "name": "GitHub",
-    "progress": 7,
     "image": "/svg/github.svg",
     "background": "/images/github.png",
-    "level": "Intermediate",
-    "description": "Hosting projects, collaboration, pull requests, and repository management."
+    "level": "Working",
+    "highlights": [
+      "Repository Management",
+      "Pull Requests",
+      "Code Collaboration"
+    ]
+  },
+  {
+    "name": "Firebase",
+    "image": "/svg/firebase.svg",
+    "background": "/images/firebase.png",
+    "level": "Learning",
+    "highlights": [
+      "Authentication",
+      "Firestore Database",
+      "Hosting"
+    ]
   },
   {
     "name": "Docker",
-    "progress": 3,
     "image": "/svg/docker.svg",
     "background": "/images/docker.png",
-    "level": "Beginner",
-    "description": "Running containers and managing development environments with Docker."
+    "level": "Learning",
+    "highlights": [
+      "Containerization",
+      "Docker Compose",
+      "Image Management"
+    ]
   },
   {
     "name": "Postman",
-    "progress": 7,
     "image": "/svg/postman.svg",
     "background": "/images/postman.png",
-    "level": "Intermediate",
-    "description": "Testing APIs, authentication flows, and backend endpoints."
-  },
-  {
-    "name": "JWT",
-    "progress": 6,
-    "image": "/svg/jwt.svg",
-    "background": "/images/jwt.png",
-    "level": "Intermediate",
-    "description": "Implementing token-based authentication and authorization."
+    "level": "Working",
+    "highlights": [
+      "API Testing",
+      "Collections",
+      "Request Debugging"
+    ]
   },
   {
     "name": "Figma",
-    "progress": 4,
     "image": "/svg/figma.svg",
     "background": "/images/figma.png",
-    "level": "Beginner",
-    "description": "Designing wireframes and UI mockups for web applications."
+    "level": "Learning",
+    "highlights": [
+      "UI Design",
+      "Wireframing",
+      "Prototyping"
+    ]
   },
   {
     "name": "Netlify",
-    "progress": 7,
     "image": "/svg/netlify.svg",
     "background": "/images/netlify.png",
-    "level": "Intermediate",
-    "description": "Deploying frontend applications with custom domains and continuous deployment."
+    "level": "Working",
+    "highlights": [
+      "Web Deployment",
+      "CI/CD",
+      "Custom Domains"
+    ]
   },
   {
     "name": "Vercel",
-    "progress": 7,
     "image": "/svg/vercel.svg",
     "background": "/images/vercel.png",
-    "level": "Intermediate",
-    "description": "Deploying Next.js applications with serverless hosting."
+    "level": "Working",
+    "highlights": [
+      "Next.js Hosting",
+      "Edge Deployment",
+      "Serverless Functions"
+    ]
   }
 ]
