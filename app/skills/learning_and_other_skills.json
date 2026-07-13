@@ -19,16 +19,5 @@
         "background": "/images/postgresql.png",
         "level": "Learning",
         "highlights": "Using PostgreSQL for relational databases, queries, and application integration."
-    },
-    {
-        "name": "Express.js",
-        "image": "/svg/express.svg",
-        "background": "/images/express.png",
-        "level": "Intermediate",
-        "highlights": [
-            "REST Endpoints",
-            "Middleware",
-            "Route Handling"
-        ]
     }
 ]

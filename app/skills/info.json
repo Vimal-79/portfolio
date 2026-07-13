@@ -76,6 +76,17 @@
       "Authentication"
     ]
   },
+    {
+        "name": "Express.js",
+        "image": "/svg/express.svg",
+        "background": "/images/express.png",
+        "level": "Working",
+        "highlights": [
+            "REST Endpoints",
+            "Middleware",
+            "Route Handling"
+        ]
+    },
   {
     "name": "MongoDB",
     "image": "/svg/mongodb.svg",
