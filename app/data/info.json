@@ -112,7 +112,7 @@
     "image": "/svg/mysql.svg",
     "background": "/images/mysql.png",
     "category": "Backend",
-    "level": "Foundational",
+    "level": "Basic",
     "highlights": [
       "SQL Queries",
       "Joins",
