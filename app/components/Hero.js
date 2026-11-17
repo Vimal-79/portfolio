@@ -8,7 +8,7 @@ import RevealSection from './RevealSection';
 const shortLinks = [
     { name: 'GitHub', href: 'https://github.com/vimal-79', icon: <FaGithub size={34} />, hoverClass: 'hover:text-gray-400' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/vimal-kumar-3b618935b/', icon: <FaLinkedinIn size={34} />, hoverClass: 'hover:text-blue-500' },
-    { name: 'Instagram', href: 'https://www.instagram.com/thewolfco', icon: <FaInstagram size={34} />, hoverClass: 'hover:text-pink-500' },
+    { name: 'Instagram', href: 'https://www.instagram.com/thewolfcoder', icon: <FaInstagram size={34} />, hoverClass: 'hover:text-pink-500' },
     { name: 'Email', href: 'mailto:vimal.kumar.799@gmail.com', icon: <CiMail size={34} />, hoverClass: 'hover:text-red-500' },
 ];
 
